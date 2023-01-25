@@ -1,5 +1,5 @@
 # C - Team Project `printf()`
 
-Authors: Chibuike Precious Ekoema & Kwabena Boakye
+## Authors: ***Chibuike Precious Ekoema*** & ***Kwabena Boakye***
 
 
