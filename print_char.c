@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_cent - Takes care of the printing of character parameters
+ * print_char - Takes care of the printing of character parameters
  * @args : list of variadic parameters
  * Return: number of characters printed.(always 1 in this place).
  *
