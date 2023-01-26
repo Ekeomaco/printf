@@ -19,32 +19,22 @@ int _print_format(const char *format, va_list args)
 		{
 			if (format[i + 1] == '\0')
 				return (-1);
-
 			i++;
-
 			while (format[i] == ' ')
 				i++;
-
 			if (format[i] == '%')
 				count += _write(format[i]);
-
 			if (_validate_char(format[i]) == 0)
-			{
 				count = _print_invalid_spec(format[i - 1], format[i], count);
-			}
 			else
-			{
 				count += _print_spec(format[i], args);
-			}
 		}
 		else
 		{
 			count += _write(format[i]);
 		}
-
 		i++;
 	}
-
 	return (count);
 }
 
@@ -65,18 +55,14 @@ int _print_spec(char format, va_list args)
 		{"i", _print_a_integer},
 		{"b", _print_int_binary},
 		{NULL, NULL}};
-
 	while (_types[i].specifier)
 	{
 		if (*_types[i].specifier == format)
 			length = _types[i].f(args);
-
 		i++;
 	}
-
 	return (length);
 }
-
 /**
  * _print_invalid_spec - Prints a invalid specifier
  * @prev_format: The previous specifier of actual specifier
@@ -88,20 +74,15 @@ int _print_spec(char format, va_list args)
 int _print_invalid_spec(char prev_format, char format, int count)
 {
 	count += _write('%');
-
 	if (prev_format == ' ')
 	{
 		count += _write(' ');
 		count += _write(format);
 	}
 	else
-	{
 		count += _write(format);
-	}
-
 	return (count);
 }
-
 /**
  * _validate_char - validate the type
  * @_type: character to be comparate
